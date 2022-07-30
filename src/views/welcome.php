@@ -53,7 +53,7 @@
 
     section h1 {
         font-size: 2rem;
-        color: #555;
+        color: #444;
     }
 
     section p {
@@ -123,6 +123,10 @@
                 </li>
                 <li>
                     <a href="/John">/:name - dynamic route</a>
+                </li>
+
+                <li>
+                    <a href="/not-a-path/some_unknown_page">404</a>
                 </li>
             </ul>
         </section>
