@@ -1,0 +1,21 @@
+{
+  "name": "trulyao/phprouter-demo",
+  "autoload": {
+    "psr-4": {
+      "Trulyao\\PhprouterDemo\\": "src/"
+    }
+  },
+  "scripts": {
+    "start": "php -S localhost:21000"
+  },
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Ayodeji O",
+      "email": "osasonaayodeji1@gmail.com"
+    }
+  ],
+  "require": {
+    "trulyao/php-router": "dev-main"
+  }
+}

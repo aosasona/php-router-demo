@@ -1,0 +1,70 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "459426b888bea15b66f05689dd327542",
+    "packages": [
+        {
+            "name": "trulyao/php-router",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aosasona/php-router.git",
+                "reference": "f3d72d392109a061ec420c72b4778f94c0c12a22"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aosasona/php-router/zipball/f3d72d392109a061ec420c72b4778f94c0c12a22",
+                "reference": "f3d72d392109a061ec420c72b4778f94c0c12a22",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=5.6"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Trulyao\\PhpRouter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ayodeji O",
+                    "email": "osasonaayodeji1@gmail.com"
+                }
+            ],
+            "description": "A simple express-style router for PHP",
+            "homepage": "https://github.com/aosasona/php-router",
+            "keywords": [
+                "api",
+                "express",
+                "php",
+                "router"
+            ],
+            "support": {
+                "issues": "https://github.com/aosasona/php-router/issues",
+                "source": "https://github.com/aosasona/php-router/tree/main"
+            },
+            "time": "2022-07-30T17:44:59+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "trulyao/php-router": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}
