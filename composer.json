@@ -16,6 +16,6 @@
     }
   ],
   "require": {
-    "trulyao/php-router": "dev-main"
+    "trulyao/php-router": "^2.0"
   }
 }

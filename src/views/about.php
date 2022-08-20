@@ -45,8 +45,10 @@
 
 <body>
     <h1>About</h1>
-    PHP-Router is a modern, lightning-fast, and adaptable composer package that provides express-style routing in PHP.
-    </br>
+    PHP-Router is a modern, lightning-fast, and adaptable composer package that provides express-style routing in PHP without any framework.
+    <br/>
+    View documentation here: <a href="https://github.com/aosasona/php-router#php-router">Github</a>
+    <br/>
     <a href="/">Home</a>
 </body>
 

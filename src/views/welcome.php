@@ -87,7 +87,7 @@
     }
 
     pre {
-        padding: 1rem;
+        padding: 0.5rem;
         border-radius: 0.25rem;
         overflow-x: auto;
     }
@@ -99,81 +99,118 @@
 </script>
 
 <body>
-    <header>
-        <h1>PHPRouter</h1>
-    </header>
+<header>
+    <h1>PHPRouter</h1>
+</header>
 
-    <main>
-        <section>
-            <h1>Welcome</h1>
-            <p>
-                This page is being served by the PHPRouter package. Click <a href="https://github.com/aosasona/php-router">here</a> to check it out on GitHub.
-            </p>
+<main>
+    <section>
+        <h1>Welcome</h1>
+        <p>
+            This page is being served by the PHPRouter package. Click <a href="https://github.com/aosasona/php-router">here</a>
+            to check it out on GitHub.
+        </p>
 
-        </section>
+        <p>
+            View documentation here: <a href="https://github.com/aosasona/php-router#php-router">Github</a>
+        </p>
 
-        <section>
-            <h1>Routes</h1>
-            <ul>
-                <li>
-                    <a href="/about">/about</a>
-                </li>
-                <li>
-                    <a href="/handler">/handler - served from controller file</a>
-                </li>
-                <li>
-                    <a href="/John">/:name - dynamic route</a>
-                </li>
+        <h2>Installation</h2>
+        <p>
+            To install PHPRouter, run the following command:
+        </p>
+        <pre>
+                <code class="language-bash">
+                    composer require trulyao/php-router
+                </code>
+        </pre>
+        <p>
+            After this, you would also need to update your Apache .htaccess files to allow this package work.
+            You can find the recommended .htaccess config <a href="https://github.com/aosasona/php-router#update-htaccess-file">here</a>
+        </p>
 
-                <li>
-                    <a href="/not-a-path/some_unknown_page">404</a>
-                </li>
-            </ul>
-        </section>
+        <h2>Create a new project</h2>
+        <p>
+            You can run the command below to generate a new project that uses PHP router and contains other bare
+            minimum like MySQL & PHPMyAdmin in a dockerized setup.
+        </p>
+        <pre>
+            <code class="language-bash">
+                composer create-project trulyao/php-starter hello-world
+            </code>
+        </pre>
 
-        <section>
-            <h1>Sample Usage</h1>
-            <pre>
+    </section>
+
+    <section>
+        <h1>Routes</h1>
+        <ul>
+            <li>
+                <a href="/about">/about</a>
+            </li>
+            <li>
+                <a href="/handler">/handler - served from controller file</a>
+            </li>
+            <li>
+                <a href="/John">/:name - dynamic route</a>
+            </li>
+
+            <li>
+                <a href="/not-a-path/some_unknown_page">404</a>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>Sample Usage</h1>
+        <pre>
             <code class="language-php">
 
-            require('vendor/autoload.php');
+          use \Trulyao\PhpRouter\Router as Router;
 
-            use Trulyao\PhpRouter;
+          $router = new Router(__DIR__."/views", "demo");
 
-            $router = new PhpRouter\Router(__DIR__ . "/src", "");
+          $router->get("/", function($req, $res) {
+              return $res->send("<h1>Hello World</h1>")
+                  ->status(200);
+          });
 
-            $router->get("", function ($req, $res) {
-                return $res->use("views/welcome.php");
-            });
+          $router->get('/render', function ($req, $res) {
+              return $res->render("second.html", $req);
+          });
 
-            $router->get("/about", function ($req, $res) {
-                return $res->use("views/about.php");
-            });
+          $router->post("/", function($req, $res) {
+              return $res->send([
+                  "message" => "Hello World"
+              ]);
+          });
 
+          # using a class based controller
+          $router->delete("/", [new NoteController(), "destroy"]);
 
-            $router->get("/handler", function ($req, $res) {
-                include("src/controllers/post.php");
-                return hello($req, $res);
-            });
+          $router->route("/chained")
+              ->get(function ($req, $res) {
+                  return $res->send("GET - Chained!");
+              })
+              ->post(function ($req, $res) {
+                  return $res->send("POST - Chained!");
+              });
 
-            $router->get(":name", function ($req, $res) {
-                return $res->send("Hello {$req->params("name")}")->status(200);
-            });
-
-
-            $router->serve();
+          # Start the router - very important!
+          $router->serve();
 
             </code>
         </pre>
-        </section>
-    </main>
+    </section>
+</main>
 
-    <footer>
-        <p>Built by <a href="https://twitter.com/trulyao" target="_blank" rel="noopener noreferrer">Ayodeji</a>
-        <p>
-            <a href="https://github.com/aosasona/php-router#readme" target="_blank" rel="noopener noreferrer">Documentation</a>
-        </p>
-    </footer>
+<footer>
+    <p>Built by <a href="https://twitter.com/trulyao" target="_blank" rel="noopener noreferrer">Ayodeji</a>
+    <p>
+        <a href="https://github.com/aosasona/php-router#readme" target="_blank"
+           rel="noopener noreferrer">Documentation</a>
+    </p>
+</footer>
 
 
 </body>
