@@ -1,5 +1,5 @@
 <?php
-require('vendor/autoload.php');
+require 'vendor/autoload.php';
 
 use Trulyao\PhpRouter\Router as Router;
 use Trulyao\PhpRouter\HTTP\Response as Response;
