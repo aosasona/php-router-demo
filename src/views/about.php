@@ -23,6 +23,8 @@
     body {
         max-width: 768px;
         margin: 0 auto;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
     }
 
     h1 {
