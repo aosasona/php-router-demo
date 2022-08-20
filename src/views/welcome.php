@@ -90,8 +90,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #fff;
-        color: #444444;
+        background-color: #222;
+        color: #eee;
         text-align: center;
         margin-top: 3rem;
         padding: 2rem;
@@ -101,9 +101,11 @@
         font-size: 0.9rem;
     }
     code {
-        padding: 0.3rem 0 !important;
+        position: relative;
+        width: 100%;
+        padding: 0.3rem 3rem 0.3rem !important;
         border-radius: 0.25rem;
-        background-color: #fff !important;
+        background-color: floralwhite !important;
     }
     code::-webkit-scrollbar {
         display: none;
@@ -131,6 +133,7 @@
         margin-right: 0.75rem;
         border-radius: 0.1rem;
     }
+
 </style>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
@@ -152,9 +155,6 @@
             to check it out on GitHub.
         </p>
 
-        <p>
-            View documentation here: <a href="https://github.com/aosasona/php-router#php-router">Github</a>
-        </p>
 
     </section>
 
@@ -165,7 +165,7 @@
             To install PHPRouter, run the following command:
         </p>
         <pre>
-                <code>
+                <code id="installation">
                     composer require trulyao/php-router
                 </code>
         </pre>
@@ -183,7 +183,7 @@
             minimum like MySQL & PHPMyAdmin in a dockerized setup.
         </p>
         <pre>
-            <code>
+            <code id="get-started">
                 composer create-project trulyao/php-starter hello-world
             </code>
         </pre>
@@ -213,7 +213,7 @@
         <h1>Sample Usage</h1>
         <hr />
         <pre style="padding:0 !important">
-            <code class="language-php">
+            <code class="language-php" code="code-sample">
 
           use \Trulyao\PhpRouter\Router as Router;
 
@@ -260,6 +260,29 @@
     </p>
 </footer>
 
+<script>
+    const copy = async (id) => {
+        const el = document.getElementById(id);
+        const elementContent = el.innerText;
+        await navigator.clipboard.writeText(elementContent);
+        alert("Copied to clipboard!");
+    }
+
+    const codeBlocks = document.getElementsByTagName("code");
+    for (let i = 0; i < codeBlocks.length; i++) {
+        codeBlocks[i].addEventListener("click", function() {
+            copy(this.id);
+        });
+        const newEl = document.createElement("p");
+        newEl.innerText = "Tap or click to copy";
+        newEl.style.color = "#cccccc";
+        newEl.style.opacity = "0.5";
+        newEl.style.fontSize = "0.6rem";
+        newEl.style.marginTop = "0.5rem";
+
+        codeBlocks[i].parentNode.insertBefore(newEl, codeBlocks[i].nextSibling);
+    }
+</script>
 
 </body>
 
