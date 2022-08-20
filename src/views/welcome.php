@@ -26,7 +26,7 @@
     }
 
     body {
-        background-color: #000615;
+        background-color: #151515;
         color: #fff;
     }
 
@@ -54,7 +54,7 @@
     }
 
     section {
-        padding-inline: 1.5rem;
+        padding-inline: 1.25rem;
         margin-top: 2rem;
     }
 
@@ -90,7 +90,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #222;
+        background-color: #2a2a2a;
         color: #eee;
         text-align: center;
         margin-top: 3rem;
@@ -151,7 +151,7 @@
         <h1>Welcome</h1>
         <hr />
         <p>
-            This page is being served by the PHPRouter package. Click <a href="https://github.com/aosasona/php-router">here</a>
+            This page is being served by the PHPRouter package. Click <a href="https://github.com/aosasona/php-router" target="_blank" rel="noopener noreferrer">here</a>
             to check it out on GitHub.
         </p>
 
@@ -170,8 +170,8 @@
                 </code>
         </pre>
         <p>
-            After this, you would also need to update your Apache .htaccess files to allow this package work.
-            You can find the recommended .htaccess config <a href="https://github.com/aosasona/php-router#update-htaccess-file">here</a>
+            After this, you would also need to update your Apache server's .htaccess file to allow this package work properly.
+            You can find the recommended .htaccess config <a href="https://github.com/aosasona/php-router#update-htaccess-file" target="_blank" rel="noopener noreferrer">here</a>
         </p>
     </section>
 
