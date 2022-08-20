@@ -56,10 +56,17 @@
         color: #444;
     }
 
-    section p {
-        margin-top: 0.75rem;
+    p {
+        margin-top: 0.15rem;
         font-size: 0.95rem;
-        padding: 0 1rem;
+        padding: 0;
+        line-height: 1.4;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        color: #444;
+        margin-top: 1rem;
     }
 
     ul {
@@ -85,11 +92,21 @@
     footer p {
         font-size: 0.9rem;
     }
+    code {
+        padding: 0.3rem 0 !important;
+        border-radius: 0.45rem;
+    }
 
     pre {
         padding: 0.5rem;
-        border-radius: 0.25rem;
         overflow-x: auto;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid #ddd;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 </style>
 
@@ -106,6 +123,7 @@
 <main>
     <section>
         <h1>Welcome</h1>
+        <hr />
         <p>
             This page is being served by the PHPRouter package. Click <a href="https://github.com/aosasona/php-router">here</a>
             to check it out on GitHub.
@@ -114,13 +132,16 @@
         <p>
             View documentation here: <a href="https://github.com/aosasona/php-router#php-router">Github</a>
         </p>
+    </section>
 
-        <h2>Installation</h2>
+    <section>
+        <h1>Installation</h1>
+        <hr />
         <p>
             To install PHPRouter, run the following command:
         </p>
         <pre>
-                <code class="language-bash">
+                <code>
                     composer require trulyao/php-router
                 </code>
         </pre>
@@ -128,14 +149,17 @@
             After this, you would also need to update your Apache .htaccess files to allow this package work.
             You can find the recommended .htaccess config <a href="https://github.com/aosasona/php-router#update-htaccess-file">here</a>
         </p>
+    </section>
 
-        <h2>Create a new project</h2>
+    <section>
+        <h1>Create a new project</h1>
+        <hr />
         <p>
             You can run the command below to generate a new project that uses PHP router and contains other bare
             minimum like MySQL & PHPMyAdmin in a dockerized setup.
         </p>
         <pre>
-            <code class="language-bash">
+            <code>
                 composer create-project trulyao/php-starter hello-world
             </code>
         </pre>
@@ -144,6 +168,7 @@
 
     <section>
         <h1>Routes</h1>
+        <hr />
         <ul>
             <li>
                 <a href="/about">/about</a>
@@ -154,7 +179,6 @@
             <li>
                 <a href="/John">/:name - dynamic route</a>
             </li>
-
             <li>
                 <a href="/not-a-path/some_unknown_page">404</a>
             </li>
@@ -163,7 +187,8 @@
 
     <section>
         <h1>Sample Usage</h1>
-        <pre>
+        <hr />
+        <pre style="padding:0 !important">
             <code class="language-php">
 
           use \Trulyao\PhpRouter\Router as Router;
@@ -185,16 +210,15 @@
               ]);
           });
 
-          # using a class based controller
           $router->delete("/", [new NoteController(), "destroy"]);
 
-          $router->route("/chained")
-              ->get(function ($req, $res) {
-                  return $res->send("GET - Chained!");
-              })
-              ->post(function ($req, $res) {
-                  return $res->send("POST - Chained!");
-              });
+          $router->route("/more/chained")
+                ->get(function (Request $req, Response $res) {
+                    return $res->send("<b>GET</b> - Chained!");
+                })
+                ->post(function (Request $req, Response $res) {
+                    return $res->send("POST - Chained!");
+                });
 
           # Start the router - very important!
           $router->serve();

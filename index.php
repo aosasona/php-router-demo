@@ -1,11 +1,13 @@
 <?php
-require 'vendor/autoload.php';
+require __DIR__.'/vendor/autoload.php';
 
 use Trulyao\PhpRouter\Router as Router;
 use Trulyao\PhpRouter\HTTP\Response as Response;
 use Trulyao\PhpRouter\HTTP\Request as Request;
 
 $router = new Router(__DIR__ . "/src", "");
+
+
 
 $router->get("/", function (Request $req, Response $res) {
     return $res->render("views/welcome.php");
@@ -22,8 +24,16 @@ $router->get("/handler", function (Request $req, Response $res) {
 });
 
 $router->get("/:name", function (Request $req, Response $res) {
-    return $res->send("<h1 style='font-family: Arial; text-align: center; font-size: 5rem; margin: 10vh 0;'>Hello <span style='color: #39e; text-decoration: underline;'>{$req->params("name")}</span></h1>")->status(200);
+    return $res->send("<h1 style='font-family: Arial,serif; text-align: center; font-size: 5rem; margin: 10vh 0;'>Hello <span style='color: #39e; text-decoration: underline;'>{$req->params("name")}</span></h1>")->status(200);
 });
+
+$router->route("/more/chained")
+    ->get(function (Request $req, Response $res) {
+        return $res->send("<b>GET</b> - Chained!");
+    })
+    ->post(function (Request $req, Response $res) {
+        return $res->send("POST - Chained!");
+    });
 
 
 $router->serve();

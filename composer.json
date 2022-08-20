@@ -8,11 +8,9 @@
   "scripts": {
     "start": "php -S localhost:21000"
   },
-  "minimum-stability": "stable",
   "authors": [
     {
-      "name": "Ayodeji O",
-      "email": "osasonaayodeji1@gmail.com"
+      "name": "Ayodeji O"
     }
   ],
   "require": {

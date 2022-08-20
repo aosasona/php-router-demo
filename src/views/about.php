@@ -28,11 +28,10 @@
     h1 {
         font-size: 2rem;
         color: #444;
-        margin: 0.75rem 0;
+        margin: 0.85rem 0;
     }
 
     a {
-        display: block;
         color: #39e;
         text-decoration: none;
         margin-top: 2rem;
@@ -41,15 +40,23 @@
     a:hover {
         text-decoration: underline;
     }
+
+    hr {
+        border: none;
+        border-top: 1px solid #ddd;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
 </style>
 
 <body>
     <h1>About</h1>
-    PHP-Router is a modern, lightning-fast, and adaptable composer package that provides express-style routing in PHP without any framework.
-    <br/>
-    View documentation here: <a href="https://github.com/aosasona/php-router#php-router">Github</a>
-    <br/>
-    <a href="/">Home</a>
+    <hr />
+    PHP-Router is a modern, lightning-fast composer package that provides easy express-style routing in PHP without any framework.
+    <br/><br/>
+    View documentation here: <a href="https://github.com/aosasona/php-router#php-router">Github README.md</a>
+    <br/><br/>
+    <a href="/">Go Home</a>
 </body>
 
 </html>
