@@ -17,20 +17,21 @@
 
     html {
         max-width: 100vw !important;
-        font-family: sans-serif;
+        font-family: Arial, "Helvetica Neue", sans-serif;
     }
 
     body {
         max-width: 768px;
+        background-color: #000615;
+        color: #fff;
         margin: 0 auto;
-        padding-right: 1rem;
-        padding-left: 1rem;
+        padding: 0 1.5rem;
     }
 
     h1 {
         font-size: 2rem;
-        color: #444;
-        margin: 0.85rem 0;
+        color: #ccc;
+        margin: 1.85rem 0;
     }
 
     a {
@@ -54,11 +55,13 @@
 <body>
     <h1>About</h1>
     <hr />
+    <a href="/">&lArr; Go Home</a>
+    <br/><br/>
     PHP-Router is a modern, lightning-fast composer package that provides easy express-style routing in PHP without any framework.
     <br/><br/>
     View documentation here: <a href="https://github.com/aosasona/php-router#php-router">Github README.md</a>
     <br/><br/>
-    <a href="/">Go Home</a>
+    <img src="/public/code.jpg" alt="" style="max-width: 100%; object-fit: contain; padding: 1rem 0;"/>
 </body>
 
 </html>

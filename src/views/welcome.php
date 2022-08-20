@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/public/code.jpg" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/public/code.jpg" type="image/x-icon" />
     <title>PHPRouter</title>
 </head>
 
@@ -21,6 +23,11 @@
     body {
         max-width: 100vw !important;
         font-family: sans-serif;
+    }
+
+    body {
+        background-color: #000615;
+        color: #fff;
     }
 
     main {
@@ -53,7 +60,7 @@
 
     section h1 {
         font-size: 2rem;
-        color: #444;
+        color: #ccc;
     }
 
     p {
@@ -74,7 +81,7 @@
         flex-direction: column;
         gap: 1rem;
         list-style: none;
-        padding: 0 1rem;
+        padding: 0 0.4rem;
         margin-top: 1rem;
     }
 
@@ -83,7 +90,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #eeeeeea1;
+        background-color: #fff;
+        color: #444444;
         text-align: center;
         margin-top: 3rem;
         padding: 2rem;
@@ -94,7 +102,11 @@
     }
     code {
         padding: 0.3rem 0 !important;
-        border-radius: 0.45rem;
+        border-radius: 0.25rem;
+        background-color: #fff !important;
+    }
+    code::-webkit-scrollbar {
+        display: none;
     }
 
     pre {
@@ -104,9 +116,20 @@
 
     hr {
         border: none;
-        border-top: 1px solid #ddd;
+        border-top: 2px solid #cccccc4f;
         margin-top: 1rem;
         margin-bottom: 1rem;
+    }
+
+    span.method {
+        display: inline-block;
+        color: #39e;
+        font-weight: bold;
+        font-size: 0.7rem;
+        background-color: white;
+        padding: 0.25rem 0.5rem;
+        margin-right: 0.75rem;
+        border-radius: 0.1rem;
     }
 </style>
 
@@ -117,7 +140,7 @@
 
 <body>
 <header>
-    <h1>PHPRouter</h1>
+    <h1 style="font-size: 1.5rem">PHPRouter</h1>
 </header>
 
 <main>
@@ -132,6 +155,7 @@
         <p>
             View documentation here: <a href="https://github.com/aosasona/php-router#php-router">Github</a>
         </p>
+
     </section>
 
     <section>
@@ -171,16 +195,16 @@
         <hr />
         <ul>
             <li>
-                <a href="/about">/about</a>
+                <span class="method">GET</span><a href="/about">/about</a>
             </li>
             <li>
-                <a href="/handler">/handler - served from controller file</a>
+                <span class="method">GET</span><a href="/handler">/handler - served from controller file</a>
             </li>
             <li>
-                <a href="/John">/:name - dynamic route</a>
+                <span class="method">GET</span><a href="/John">/:name - dynamic route</a>
             </li>
             <li>
-                <a href="/not-a-path/some_unknown_page">404</a>
+                <span class="method">GET</span><a href="/not-a-path/some_unknown_page">404</a>
             </li>
         </ul>
     </section>
