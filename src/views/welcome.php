@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/public/code.jpg" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="/public/code.jpg" type="image/x-icon" />
+    <link rel="icon" href="/public/code.jpg" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/public/code.jpg" type="image/x-icon"/>
     <title>PHPRouter</title>
 </head>
 
@@ -113,6 +113,7 @@
     footer p {
         font-size: 0.9rem;
     }
+
     code {
         position: relative;
         width: 100%;
@@ -120,6 +121,7 @@
         border-radius: 0.25rem;
         background-color: floralwhite !important;
     }
+
     code::-webkit-scrollbar {
         display: none;
     }
@@ -162,9 +164,11 @@
 <main>
     <section>
         <h1>Welcome</h1>
-        <hr />
+        <hr/>
         <p>
-            This page is being served by the PHPRouter package. Click <a href="https://github.com/aosasona/php-router-demo" target="_blank" rel="noopener noreferrer">here</a>
+            This page is being served by the PHPRouter package. Click <a
+                    href="https://github.com/aosasona/php-router-demo" target="_blank"
+                    rel="noopener noreferrer">here</a>
             to check out the source code for this website on GitHub.
         </p>
 
@@ -173,7 +177,7 @@
 
     <section>
         <h1>Installation</h1>
-        <hr />
+        <hr/>
         <p>
             To install PHPRouter, run the following command:
         </p>
@@ -183,14 +187,17 @@
                 </code>
         </pre>
         <p>
-            After this, you would also need to update your Apache server's .htaccess file to allow this package work properly.
-            You can find the recommended .htaccess config <a href="https://github.com/aosasona/php-router#update-htaccess-file" target="_blank" rel="noopener noreferrer">here</a>
+            After this, you would also need to update your Apache server's .htaccess file to allow this package work
+            properly.
+            You can find the recommended .htaccess config <a
+                    href="https://github.com/aosasona/php-router#update-htaccess-file" target="_blank"
+                    rel="noopener noreferrer">here</a>
         </p>
     </section>
 
     <section>
         <h1>Create a new project</h1>
-        <hr />
+        <hr/>
         <p>
             You can run the command below to generate a boilerplate project that uses PHP router and contains other bare
             minimum like MySQL & PHPMyAdmin in a dockerized setup.
@@ -205,7 +212,7 @@
 
     <section>
         <h1>Routes</h1>
-        <hr />
+        <hr/>
         <ul>
             <li>
                 <span class="method">GET</span><a href="/about">/about</a>
@@ -224,7 +231,7 @@
 
     <section>
         <h1>Projects</h1>
-        <hr />
+        <hr/>
         <p>Here are some of the projects currently using this package:</p>
         <ul>
             <li class="project">
@@ -232,23 +239,23 @@
                 <a href="/projects/randgen" target="_blank" rel="noopener noreferrer">
                     RandGen
                 </a>
-                <p style="color: #aaa">
-                        Generate random strings for passwords, encryption keys etc
-                    </p>
+                <p style="color: #aaa; font-size: 13px;">
+                    Generate random strings for passwords, encryption keys etc
+                </p>
             </li>
             <li class="project">
                 <span class="disk"></span>
                 <a href="/projects/php-jwt-api" target="_blank" rel="noopener noreferrer">
                     PHP JWT API
                 </a>
-                <p style="color: #aaa">A notes API with JSON Web Token authentication</p>
+                <p style="color: #aaa; font-size: 13px;">A notes API with JSON Web Token authentication</p>
             </li>
         </ul>
     </section>
 
     <section>
         <h1>Sample Usage</h1>
-        <hr />
+        <hr/>
         <pre style="padding:0 !important">
             <code class="language-php" code="code-sample">
 
@@ -307,7 +314,7 @@
 
     const codeBlocks = document.getElementsByTagName("code");
     for (let i = 0; i < codeBlocks.length; i++) {
-        codeBlocks[i].addEventListener("click", function() {
+        codeBlocks[i].addEventListener("click", function () {
             copy(this.id);
         });
         const newEl = document.createElement("p");
