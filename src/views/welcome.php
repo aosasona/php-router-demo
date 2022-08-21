@@ -70,6 +70,14 @@
         line-height: 1.4;
     }
 
+    .disk {
+        display: inline-block;
+        width: 10px;
+        aspect-ratio: 1/1;
+        background-color: whitesmoke;
+        margin-right: 3px;
+    }
+
     h2 {
         font-size: 1.5rem;
         color: #444;
@@ -83,6 +91,11 @@
         list-style: none;
         padding: 0 0.4rem;
         margin-top: 1rem;
+    }
+
+    li.project a {
+        font-weight: 600;
+        font-size: 18px;
     }
 
     footer {
@@ -152,7 +165,7 @@
         <hr />
         <p>
             This page is being served by the PHPRouter package. Click <a href="https://github.com/aosasona/php-router-demo" target="_blank" rel="noopener noreferrer">here</a>
-            to check it the source code for this website on GitHub.
+            to check out the source code for this website on GitHub.
         </p>
 
 
@@ -179,7 +192,7 @@
         <h1>Create a new project</h1>
         <hr />
         <p>
-            You can run the command below to generate a new project that uses PHP router and contains other bare
+            You can run the command below to generate a boilerplate project that uses PHP router and contains other bare
             minimum like MySQL & PHPMyAdmin in a dockerized setup.
         </p>
         <pre>
@@ -214,17 +227,21 @@
         <hr />
         <p>Here are some of the projects currently using this package:</p>
         <ul>
-            <li>
+            <li class="project">
+                <span class="disk"></span>
                 <a href="/projects/randgen" target="_blank" rel="noopener noreferrer">
-                    RandGen - <span style="color: #aaa">
-                        Generate random strings for passwords and encryption keys
-                    </span>
+                    RandGen
                 </a>
+                <p style="color: #aaa">
+                        Generate random strings for passwords, encryption keys etc
+                    </p>
             </li>
-            <li>
+            <li class="project">
+                <span class="disk"></span>
                 <a href="/projects/php-jwt-api" target="_blank" rel="noopener noreferrer">
-                    PHP JWT API - <span style="color: #aaa">A notes API with JSON Web Token authentication</span>
+                    PHP JWT API
                 </a>
+                <p style="color: #aaa">A notes API with JSON Web Token authentication</p>
             </li>
         </ul>
     </section>
