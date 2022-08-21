@@ -151,8 +151,8 @@
         <h1>Welcome</h1>
         <hr />
         <p>
-            This page is being served by the PHPRouter package. Click <a href="https://github.com/aosasona/php-router" target="_blank" rel="noopener noreferrer">here</a>
-            to check it out on GitHub.
+            This page is being served by the PHPRouter package. Click <a href="https://github.com/aosasona/php-router-demo" target="_blank" rel="noopener noreferrer">here</a>
+            to check it the source code for this website on GitHub.
         </p>
 
 
@@ -205,6 +205,26 @@
             </li>
             <li>
                 <span class="method">GET</span><a href="/not-a-path/some_unknown_page">404</a>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>Projects</h1>
+        <hr />
+        <p>Here are some of the projects currently using this package:</p>
+        <ul>
+            <li>
+                <a href="/projects/randgen" target="_blank" rel="noopener noreferrer">
+                    RandGen - <span style="color: #aaa">
+                        Generate random strings for passwords and encryption keys
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="/projects/php-jwt-api" target="_blank" rel="noopener noreferrer">
+                    PHP JWT API - <span style="color: #aaa">A notes API with JSON Web Token authentication</span>
+                </a>
             </li>
         </ul>
     </section>

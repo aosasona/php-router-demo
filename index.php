@@ -27,6 +27,14 @@ $router->get("/:name", function (Request $req, Response $res) {
     return $res->send("<h1 style='font-family: Arial,serif; text-align: center; font-size: 5rem; margin: 10vh 0;'>Hello <span style='color: #39e; text-decoration: underline;'>{$req->params("name")}</span></h1>")->status(200);
 });
 
+$router->get("/projects/randgen", function (Request $req, Response $res) {
+    return $res->redirect("https://github.com/aosasona/randgen");
+});
+
+$router->get("/projects/php-jwt-api", function (Request $req, Response $res) {
+    return $res->redirect("https://github.com/aosasona/php-jwt-auth");
+});
+
 $router->route("/more/chained")
     ->get(function (Request $req, Response $res) {
         return $res->send("<b>GET</b> - Chained!");

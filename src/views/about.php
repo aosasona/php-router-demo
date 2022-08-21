@@ -57,11 +57,13 @@
     <hr />
     <a href="/">&lArr; Go Home</a>
     <br/><br/>
+    <p style="line-height: 1.6">
     PHP-Router is a modern, lightning-fast composer package that provides easy express-style routing in PHP without any framework.
-    <br/><br/>
+    </p>
+    <br/>
     View documentation here: <a href="https://github.com/aosasona/php-router#php-router">Github README.md</a>
     <br/><br/>
-    <img src="/public/code.jpg" alt="" style="max-width: 100%; object-fit: contain; padding: 1rem 0;"/>
+    <img src="/public/code.jpg" alt="" style="max-width: 100%; object-fit: contain; padding: 1rem 0;margin-bottom: 10vh"/>
 </body>
 
 </html>
