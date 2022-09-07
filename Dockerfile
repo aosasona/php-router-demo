@@ -1,5 +1,7 @@
 FROM php:8.0-apache
 
+USER root
+
 WORKDIR /var/www/html
 
 COPY . .
