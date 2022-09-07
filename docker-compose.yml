@@ -5,6 +5,7 @@ volumes:
 
 services:
   web:
+    user: root
     build:
       context: .
       dockerfile: Dockerfile
