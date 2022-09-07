@@ -4,9 +4,11 @@ USER root
 
 WORKDIR /var/www/html
 
+COPY web.conf /etc/apache2/sites-available/web.conf
+
 COPY . .
 
-COPY web.conf /etc/apache2/sites-available/web.conf
+RUN chown -R www-data:www-data /var/www
 
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
