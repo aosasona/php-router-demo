@@ -257,7 +257,7 @@
         <h1>Sample Usage</h1>
         <hr/>
         <pre style="padding:0 !important">
-            <code class="language-php" code="code-sample">
+            <code class="language-php">
 
           use \Trulyao\PhpRouter\Router as Router;
 
