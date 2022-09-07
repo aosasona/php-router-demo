@@ -2,11 +2,13 @@ FROM php:8.0-apache
 
 USER root
 
-WORKDIR /var/www/html
-
 COPY web.conf /etc/apache2/sites-available/web.conf
 
-COPY . .
+COPY start-web /usr/local/bin
+
+RUN a2enmod rewrite
+
+COPY . /var/www/html
 
 RUN chown -R www-data:www-data /var/www
 
@@ -17,10 +19,10 @@ RUN apt-get update && apt-get install -y libpq-dev \
     && composer install --no-dev
 
 
-RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf && \
-    a2enmod rewrite && \
-    a2dissite 000-default && \
-    a2ensite web && \
-    service apache2 restart
+#RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf && \
+#    a2enmod rewrite && \
+#    a2dissite 000-default && \
+#    a2ensite web && \
+#    service apache2 restart
 
-ENTRYPOINT ["bash", "Docker.sh"]
+CMD ["start-web"]
