@@ -23,6 +23,4 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf && \
     a2ensite web && \
     service apache2 restart
 
-EXPOSE 80
-
 ENTRYPOINT ["bash", "Docker.sh"]
